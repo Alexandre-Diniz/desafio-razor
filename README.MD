@@ -1,0 +1,3 @@
+A função getPersonList é uma função de callback no componente Formulário. Ela adiciona uma pessoa e um id no array de pessoas, que está no componente App
+
+A remoção de uma pessoa da lista acontece no componente RemoveItem, usando o array prototype array.filter. O elemento da lista é removido no próprio componente e a nova lista é enviada via callback para o componente PersonList, que envia para o componente App via callback, onde a nova lista é renderizada e distribuida para os componentes Filhos.
