@@ -7,10 +7,8 @@ import {
   Text
 } from 'react-native'
 
-export default function ({ personList, getPersonList }) {
+export default function ({ inserir }) {
   const [person, setPerson] = useState('')
-  const [list, setList] = useState([])
-  const [clearInput, setClearInput] = useState('')
 
   return (
     <View style={styles.container} >
@@ -32,7 +30,7 @@ export default function ({ personList, getPersonList }) {
         style={[styles.buttonContainer,{backgroundColor:person===''?'#63D786':'#0DC143'}]}
         onPress={() => {
           if (person !== '') {
-            getPersonList([...personList, { person, id: `${new Date()}` }])
+            inserir({ person, id: `${new Date()}` })
             setPerson('')
           }
         }}

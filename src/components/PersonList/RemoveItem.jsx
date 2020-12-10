@@ -5,13 +5,12 @@ import {
   Text
 } from 'react-native'
 
-export default function({personList, item, removeItem}){
+export default function({item, excluir}){
   return(
     <TouchableOpacity 
       style={styles.container}
       onPress={()=>{
-        const filter = personList.filter(person=>person!==item)
-        removeItem(filter)
+        excluir(item.id)
       }}
       >
       <Text style={styles.text} >X</Text>

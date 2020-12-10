@@ -9,14 +9,25 @@ import PersonList from './src/components/PersonList'
 
 export default function App() {
   const [personList, setPersonList] = useState([])
+
+  const inserir = item => {
+    setPersonList([...personList,item])
+  }
+
+  const excluir = id => {
+    setPersonList(personList.filter(item=>item.id!==id))
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Formulario
         getPersonList={personList => setPersonList(personList)}
         personList={personList}
+        inserir={inserir}
       />
       <PersonList
+        excluir={excluir}
         personList={personList}
         getPersonList={personList=>setPersonList(personList)}
       />

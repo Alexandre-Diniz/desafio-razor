@@ -8,7 +8,7 @@ import {
 import Item from './Item'
 import RemoveItem from './RemoveItem'
 
-export default function ({ personList, getPersonList }) {
+export default function ({ personList, getPersonList,excluir }) {
   const list = personList.map(item => {
     return (
       <View key={item.id}
@@ -17,7 +17,7 @@ export default function ({ personList, getPersonList }) {
         <View style={styles.item} >
           <Item item={item} />
         </View>
-        <RemoveItem item={item} personList={personList} removeItem={list=>getPersonList(list)} />
+        <RemoveItem item={item} excluir={excluir} />
       </View>
     )
   })
